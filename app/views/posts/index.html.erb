@@ -1,0 +1,24 @@
+<h1>All Blog Posts Listing</h1>
+
+<table width="800">
+
+<% @posts.each do |post| %>
+  <tr>
+  	<td colspan="2"><hr /></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b><%= post.title %></b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><i><%= post.name %></i></td>
+  </tr>
+  <tr>
+    <td><%= post.content %></td>
+    <td nowrap=nowrap><%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
